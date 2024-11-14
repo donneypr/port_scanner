@@ -37,7 +37,6 @@ def syn_scan(ip, ports):
             sr1(IP(dst=ip)/TCP(dport=port, flags="R"), timeout=1, verbose=0)
     return open_ports
 
-# UDP Scan (requires Scapy)
 def udp_scan(ip, ports):
     open_ports = []
     for port in ports:
@@ -49,7 +48,6 @@ def udp_scan(ip, ports):
             open_ports.append(port)
     return open_ports
 
-# Main function with user choice
 def scan_ports(ip, ports, scan_type):
     if scan_type == "1":
         print("Performing TCP Connect Scan...")
